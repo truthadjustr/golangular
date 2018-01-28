@@ -3,7 +3,7 @@ FROM node:latest
 ENV GOPATH=/root/go/
 ENV PATH=/usr/local/go/bin:/root/go/bin:$PATH
 
-RUN printf "\n*** golangular ***\n" >> /root/.bashrc \
+RUN echo 'printf "\n*** golangular ***\n"' >> /root/.bashrc \
     && apt-get update && apt-get install -y --no-install-recommends \
     apt-transport-https vim netcat socat net-tools tcpdump vifm xmlstarlet jq unzip less \
     && mkdir -p /root/go/src /root/go/pkg /root/go/bin \
