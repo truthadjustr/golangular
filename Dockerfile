@@ -11,9 +11,14 @@ RUN echo 'printf "\n*** golangular ***\n"' >> /root/.bashrc \
     && wget https://dl.google.com/go/go1.9.3.linux-amd64.tar.gz \
     && tar -C /usr/local -xzf go1.9.3.linux-amd64.tar.gz \
     && rm -f go1.9.3.linux-amd64.tar.gz \
+    && go get \
+	github.com/couchbase/gocb \
+	github.com/gorilla/handlers \
+	github.com/gorilla/mux \
+	github.com/satori/go.uuid \
     && npm install -g @angular/cli@latest --unsafe \
     && npm install -g gulp \
     && npm install -g typescript \
-    && npm install -g yarn
+    && npm install -g yarn 
 
 WORKDIR /root/
